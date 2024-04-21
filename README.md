@@ -12,7 +12,8 @@ This is a repository for Yocket's Assignment Solution built using ReactJS, Expre
 Tech Stack:
 
 - React.js
-- Material-UI
+- Express.js
+- Tailwind Css
 
 ## Cloning the repository
 
