@@ -1,4 +1,4 @@
-This is a repository for GrowthX's Assignment Solution built using ReactJS.
+This is a repository for Yocket's Assignment Solution built using ReactJS, ExpressJs.
 
 ## [Live here](https://yocket-assignment-ws35.onrender.com/)
 
