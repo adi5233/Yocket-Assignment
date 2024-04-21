@@ -29,7 +29,7 @@ npm install
 ## To start the dev server
 
 ```shell
-npm start
+npm run dev
 ```
 
 ## Go to client folder
@@ -47,5 +47,5 @@ npm install
 ## To start the client server
 
 ```shell
-npm run dev
+npm start
 ```
