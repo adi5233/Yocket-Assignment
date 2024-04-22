@@ -1,5 +1,4 @@
 import React from "react";
-import { Select, Option } from "@material-tailwind/react";
 
 const Selector = ({
   label,
@@ -9,35 +8,43 @@ const Selector = ({
   disabledOption,
   handleChange,
 }) => {
-  // const [selectedValue, setSelectedValue] = useState(value);
-
-  const handleSelectChange = (newValue) => {
-    // setSelectedValue(newValue);
-    handleChange({ newValue, prevValue: value });
+  const handleSelectChange = (e) => {
+    handleChange({ newValue: e.target.value, prevValue: value });
   };
 
   return (
     <div className="w-full mt-5">
-      <Select
-        label={label}
-        size="lg"
-        // value={selectedValue}
-        className="w-full p-6"
-        onChange={(newValue) => handleSelectChange(newValue)}
-      >
-        {options.map((option) => (
-          <Option
-            key={option.name}
-            value={option.name}
-            className={`${disabledOption(option) ? "hidden" : "block"}`}
-            // selected={option.name === selectedValue}
-          >
-            {showQuantity
-              ? `${option.name} - ${option.quantity}`
-              : `${option.name}`}
-          </Option>
-        ))}
-      </Select>
+      <form class="max-w-sm mx-auto">
+        <label
+          for="countries"
+          className="block mb-2 text-sm font-medium text-gray-900"
+        >
+          {label}
+        </label>
+        <select
+          label={label}
+          size="lg"
+          value={value}
+          onChange={(newValue) => handleSelectChange(newValue)}
+          id="countries"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-none"
+        >
+          <option value="" disabled>
+            None
+          </option>
+          {options.map((o) => (
+            <option
+              key={o.name}
+              value={o.name}
+              className={`${disabledOption(o) ? "hidden" : "block"}`}
+            >
+              {showQuantity
+                ? `${o.name} ${o.quantity > 0 ? -o.quantity : ""}`
+                : `${o.name}`}
+            </option>
+          ))}
+        </select>
+      </form>
     </div>
   );
 };
