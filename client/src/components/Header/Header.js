@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,10 +12,12 @@ const Header = () => {
     <nav className="bg-gradient-to-l from-green-400 via-green-500 to-green-600  shadow-md fixed top-0 w-full z-10">
       <header className="p-4 flex justify-between items-center">
         <div className="flex justify-between items-center align-middle lg:mr-20">
-          <h1 className="font-bold text-lg sm:text-xl md:text-2xl mx-5 flex flex-wrap">
-            <span className="text-white mr-1">Urban</span>
-            <span className="text-slate-800"> EscapeHunt</span>
-          </h1>
+          <Link to="/">
+            <h1 className="font-bold text-lg sm:text-xl md:text-2xl mx-5 flex flex-wrap">
+              <span className="text-white mr-1">Urban</span>
+              <span className="text-slate-800"> EscapeHunt</span>
+            </h1>
+          </Link>
         </div>
 
         <div
@@ -69,18 +71,12 @@ const Header = () => {
             </button>
           </div>
           <div id="mobile-menu" className="">
-            <div
-              className="w-full p-4 hover:bg-green-300 "
-              onClick={toggleMenu}
-            >
+            <div className="w-full p-4 hover:bg-green-300 ">
               <NavLink to="/" activeClassName="text-pink-500">
                 Home
               </NavLink>
             </div>
-            <div
-              className="w-full p-4 hover:bg-green-300 "
-              onClick={toggleMenu}
-            >
+            <div className="w-full p-4 hover:bg-green-300 ">
               <NavLink to="/dashboard" activeClassName="text-pink-500">
                 Dashboard
               </NavLink>
