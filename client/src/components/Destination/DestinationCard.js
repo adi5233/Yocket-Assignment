@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Selector from "../common/Selector";
+import Selector from "../../common/Selector";
 import {
   addCityToDestination,
   addVehicleToDestination,
-} from "../store/destination/destinationSlice";
-import { selectCity } from "../store/city/citySlice";
-import { selectVehicle } from "../store/vehicle/vehicleSlice";
+} from "../../store/destination/destinationSlice";
+import { selectCity } from "../../store/city/citySlice";
+import { selectVehicle } from "../../store/vehicle/vehicleSlice";
 
 const DestinationCard = ({ destination }) => {
   const cities = useSelector((state) => state.cities.data);

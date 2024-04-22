@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import DestinationCard from "./DestinationCard";
+import DestinationCard from "../components/Destination/DestinationCard";
 import { getCities } from "../store/city/actions";
 import { getVehicles } from "../store/vehicle/actions";
 import { resetDestination } from "../store/destination/destinationSlice";
 import { resetVehicle } from "../store/vehicle/vehicleSlice";
 import { resetCity } from "../store/city/citySlice";
-import DestinationDetails from "../components/DestinationDetails";
+import DestinationDetails from "../components/Destination/DestinationDetails";
 import axios from "axios";
 
 const Dashboard = () => {
